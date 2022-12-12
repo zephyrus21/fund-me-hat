@@ -16,8 +16,8 @@ contract FundMe {
     address public /* immutable */ i_owner;
     uint256 public constant MINIMUM_USD = 50 * 10 ** 18;
     
-    constructor() {
-        i_owner = msg.sender;
+    constructor(address priceFeed) {
+        i_owner = msg.sender; 
     }
 
     function fund() public payable {
