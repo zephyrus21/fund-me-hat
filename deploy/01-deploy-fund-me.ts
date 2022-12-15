@@ -4,7 +4,7 @@ import { network } from "hardhat";
 import { developmentChains, networkConfig } from "../helper-hardhat-config";
 import { verify } from "../utils/verify";
 
-const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
+module.exports = async (hre: HardhatRuntimeEnvironment) => {
   const { getNamedAccounts, deployments } = hre;
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
@@ -37,5 +37,3 @@ const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
 };
 
 module.exports.tags = ["all", "fundme"];
-
-export default func;
